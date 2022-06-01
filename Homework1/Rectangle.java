@@ -1,6 +1,6 @@
 
 public class Rectangle {
-    private int height, width;
+    private float height, width;
     public Rectangle(int x, int y) {
         height=x;
         width=y;
