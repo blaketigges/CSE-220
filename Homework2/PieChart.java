@@ -73,6 +73,7 @@ public class PieChart extends Application {
         VBox box = new VBox(10);
         box.getChildren().addAll(box1, lbox1, box2, lbox2, box3, lbox3, box4, lbox4, box5);
 
+        Scene scene = new Scene(box, 300, 400);
         // event handler for button to create pie chart
         EventHandler<ActionEvent> eventHandler = new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
@@ -121,8 +122,17 @@ public class PieChart extends Application {
                 text4.setFill(Color.YELLOW);
                 text4.setStyle("-fx-font: normal bold 16px 'arial'");
 
+                // Add button to go back to the initial screen
+                Button back = new Button("Back");
+                EventHandler backHandler = new EventHandler<ActionEvent>() {
+                    public void handle(ActionEvent event) {
+                        primaryStage.setScene(scene);
+                    }
+                };
+                back.setOnAction(backHandler);
+
                 VBox text = new VBox(10);
-                text.getChildren().addAll(text1, text2, text3, text4);
+                text.getChildren().addAll(text1, text2, text3, text4, back);
                 text.setLayoutX(240);
                 text.setLayoutY(80);
 
@@ -140,7 +150,6 @@ public class PieChart extends Application {
         };
         button.setOnAction(eventHandler);
 
-        Scene scene = new Scene(box, 300, 400);
         primaryStage.setTitle("Pie Chart Input");
         primaryStage.setScene(scene);
         primaryStage.show();
