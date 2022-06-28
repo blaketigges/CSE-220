@@ -154,11 +154,6 @@ public class PieChart extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-
-        // read 4 numbers from the user from text fields
-        // calculate the percentage of each number and display it as a pie chart using JavaFX
-
-        // extra credit, ask for strings to name the slices
     }
 
     public static void main(String[] args) {
