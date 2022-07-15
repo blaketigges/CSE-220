@@ -5,7 +5,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Polygon;
 import javafx.stage.Stage;
-import javafx.scene.layout.HBox;
 
 public class car extends Application {
 
@@ -19,8 +18,8 @@ public class car extends Application {
         Circle wheel2 = new Circle(280,200,20);
         wheel2.setFill(Color.BLACK);
 
-        Group root = new Group();
-        root.getChildren().add( wheels);
+
+        Group root = new Group(body, wheel1, wheel2);
 
         Scene scene = new Scene(root, 400, 400);
         primaryStage.setTitle("Car");
